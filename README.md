@@ -1,6 +1,8 @@
 # Planet Catalogue System
 
-A C command-line application for maintaining planet records, researcher accounts and catalogue statistics. We developed this as a team coursework project for **CPT109**, using structures, linked lists, dynamic memory and text-file persistence.
+A C command-line application for maintaining planet records, researcher accounts and catalogue statistics, originally developed as a team coursework project for **CPT109**. It uses structures, linked lists, dynamic memory and text-file persistence.
+
+This repository is a prepared edition of the supplied coursework source and group report. Documentation, build files, automated tests and the fictional demonstration were added during repository preparation, along with the repairs listed in the [material provenance and preparation notes](docs/design-notes.md#material-provenance). These additions are separate from the original coursework submission.
 
 ## What it does
 
@@ -35,6 +37,8 @@ On first run, the program creates `land.txt`, `Researchers.txt` and `planetcat.t
 ## Try the demonstration
 
 [examples/demo-input.txt](examples/demo-input.txt) creates two fictional accounts, adds `Demo-A`, searches for it, displays statistics and queries its recorded contributor. The values are synthetic software examples, not astronomical observations.
+
+No original runtime dataset was supplied. The demonstration and test fixtures were written for this repository; their account names, planet values and fixed test timestamps are not historical project records.
 
 From the repository root, run the script in a fresh temporary directory:
 
@@ -77,6 +81,6 @@ The C17 build passed on Apple Silicon macOS with Apple Clang 21.0.0, including `
 
 ## Scope
 
-The course report was used to summarize the project and is **not included**. Documentation describes the supplied implementation: it does not claim planet-type classification, account deletion, a working history log or astronomy-grade numerical accuracy. Numeric fields retain the original `float` representation and two-decimal file formatting; numeric searches use exact equality.
+The course report was used to summarize the project and is **not included**. Documentation describes the prepared implementation: it does not claim planet-type classification, account deletion, a working history log or astronomy-grade numerical accuracy. Numeric fields retain the original `float` representation and two-decimal file formatting; numeric searches use exact equality.
 
 The original coursework's menu and storage design is retained. Repository preparation added build instructions, portable function adapters, focused persistence/input fixes and tests; details are in [design notes](docs/design-notes.md).

@@ -1,5 +1,19 @@
 # Design and implementation notes
 
+## Material provenance
+
+The source material consists of one C source file and the **CPT109 Group Report: Planet Catalogue System**. The report identifies a team project. This repository makes no claim about which team member implemented a particular function.
+
+| Repository material | Origin |
+|---|---|
+| `src/planet_catalogue.c` | Adapted from the supplied C source. The data model, menus and core operations are inherited; portability, input and persistence repairs are listed below. |
+| `src/portable.h` | Newly written adapters and input helpers for repository preparation. |
+| `README.md`, `src/README.md`, this document | Newly written explanations checked against the supplied source and report, with preparation changes identified separately. They are not the original report. |
+| `Makefile`, `.gitignore`, `.gitattributes` | Newly added build and repository configuration. |
+| `examples/demo-input.txt`, `tests/test_catalogue.py` | Newly written demonstration and regression checks using fictional accounts and synthetic planet records. Fixed fixture timestamps are arbitrary test values. |
+
+The supplied source already contains `increasepl()`, `modifyPlanet()` and `deletePlanet()` for record management, `searchPlanet()` for the seven search criteria, the registration/login/password functions, `viewStatistics()` and `findcontribution()`. The report discusses these operations in Sections 2.3, 3.3–3.5 and 5. The fixes and passing automated checks below describe the prepared repository version, not the condition of the original submission. No original runtime data files were supplied.
+
 ## Data model and operations
 
 `struct planet` stores a name, diameter, mass text, rotation period, density, age, distance from a star, modification time, discovered/observed flags and an adding account. `struct account` stores credentials, an administrator flag and a linked-list pointer. A linked-list cache supports the contribution view; most catalogue operations scan the persisted file.
@@ -44,6 +58,8 @@ Repairs made for a reproducible repository:
 ## Verification record
 
 On October 15, 2026, Apple Clang 21.0.0 compiled the distributed source as C17 with warnings treated as errors. Eight end-to-end test cases passed against the normal build and an AddressSanitizer/UndefinedBehaviorSanitizer build. The example input also completed in a fresh temporary directory. Other operating systems and compilers were not executed during this preparation.
+
+During the material audit on October 16, 2026, both eight-case suites and the demonstration were rerun successfully with the same compiler. The demonstration output matched the lines quoted in the README. Passing these checks does not establish scientific accuracy or complete input validation.
 
 ## Remaining boundaries
 
