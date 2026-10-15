@@ -1,0 +1,8 @@
+/build/
+/land.txt
+/Researchers.txt
+/planetcat.txt
+__pycache__/
+.DS_Store
+/planet_catalogue
+/planet_catalogue.exe
